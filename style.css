@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(224, 134, 134);
+
+}
+.card .back-vies img{
+    max-width: 45px;
+
+}
+.card .fron-vies img{
+    max-width: 45px;
+
+}
+.wrapper{
+    height: 400px;
+    width: 400px;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+
+    
+
+}
+.cards,.card,.view{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards{
+     
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    
+    justify-content: space-between;
+    
+}
+.cards .card{
+    cursor: pointer;
+    position: relative;
+    perspective: 800px;
+    transform-style: preserve-3d;
+    
+    height: calc(100%/4 - 10px);
+    width: calc(100%/4 - 10px);
+    
+    }
+.cards .card .view{
+    width: 100%;
+    height: 100%;
+   position: absolute;
+    background: #fff;
+    border-radius: 7px;
+    transition: transform 0.25s linear;
+    backface-visibility: hidden;
+    /* transition: z-index 0.5s linear; */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+
+.card .fron-vies span{
+
+    font-size: 43px;
+    color: rgb(224, 134, 134);
+  }
+
+  .card .fron-vies{
+      background:black;
+      /* z-index: 200; */
+  }
+
+
+  .back-vies.shake{
+    
+    animation: shake 0.25s;
+  
+    
+  
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+.card .fron-vies{
+    /* display: none; */
+    transform: rotateY(0deg);
+    
+    
+    
+}
+.card .back-vies{
+    /* display: none; */
+    transform: rotateY(90deg);
+    
+    
+}
+.card.flip .fron-vies{
+    transform: rotateY(270deg);
+    /* z-index: 0; */
+}
+.card.flip .back-vies{
+    transform: rotateY(360deg);
+
+}
