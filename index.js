@@ -35,6 +35,8 @@ cards.forEach((card) => {
             
             
             
+
+        
             
         })
         
