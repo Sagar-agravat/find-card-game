@@ -174,4 +174,12 @@ body{
 .score{
     font-size: 50px;
     color: #fff;
+    position: absolute;
+    top: 36%;
+    background: gray;
+    height: 60px;
+    width: 350px;
+    border: inset;
+    text-align: center;
 }
+

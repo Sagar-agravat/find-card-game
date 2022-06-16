@@ -76,7 +76,7 @@ function matchTheCard(card1, card2) {
         score = score + 1
 
         if (count == 8) {
-            scorevalue.value = score
+            scorevalue.innerHTML = `<p>Your Score is ${score}</p>`;
             setTimeout(() => {
 
 
@@ -88,6 +88,7 @@ function matchTheCard(card1, card2) {
             }, 3000)
             // button.classList.add('startview')
             count = 0;
+            score = 0;
         }
         
 
@@ -144,7 +145,7 @@ function matchTheCard(card1, card2) {
 
 function cardShffel() {
     
-    console.log(scorevalue.value)
+    
     
     cards.forEach((card) => {
         card.style.pointerEvents = "auto"
@@ -170,7 +171,7 @@ function cardShffel() {
 
 
 
-// cardShffel()
+cardShffel()
 
 
 
