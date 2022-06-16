@@ -1,12 +1,15 @@
+let button = document.querySelector(".startpage")
 let cards = document.querySelectorAll(".card");
 let cardOne, cardTwo
 let count = 0;
 let array = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]
 let value = null;
 
-console.log(cardOne, cardTwo)
-console.log(cards)
 
+
+button.addEventListener('click', () =>{
+    button.classList.remove('startview')
+})
 if (value === null) {
     cards.forEach((card) => {
 
@@ -79,6 +82,7 @@ function matchTheCard(card1, card2) {
 
                 cardShffel();
             }, 3000)
+            // button.classList.add('startview')
             count = 0;
         }
 
@@ -135,6 +139,7 @@ function matchTheCard(card1, card2) {
 
 
 function cardShffel() {
+    button.classList.add('startview')
     cards.forEach((card) => {
         card.style.pointerEvents = "auto"
     })
@@ -158,7 +163,7 @@ function cardShffel() {
 
 
 
-// cardShffel()
+cardShffel()
 
 
 
