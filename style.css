@@ -171,3 +171,7 @@ body{
     position: absolute;
 }
 
+.score{
+    font-size: 50px;
+    color: #fff;
+}

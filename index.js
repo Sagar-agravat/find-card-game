@@ -1,10 +1,12 @@
 let button = document.querySelector(".startpage")
 let cards = document.querySelectorAll(".card");
+let scorevalue = document.querySelector(".score")
 let cardOne, cardTwo
 let count = 0;
 let array = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]
 let value = null;
-
+let score = 0;
+console.log(scorevalue.value)
 
 
 button.addEventListener('click', () =>{
@@ -19,7 +21,7 @@ if (value === null) {
             if (cardOne != null) {
                 value = 1;
 
-                console.log(value)
+                
                 cardTwo = card
                 cardTwo.style.pointerEvents = "none"
 
@@ -58,7 +60,7 @@ function matchTheCard(card1, card2) {
         count++
 
 
-        console.log("both card mached")
+        
         card1.style.pointerEvents = "none"
         card2.style.pointerEvents = "none"
         cardOne = null;
@@ -71,8 +73,10 @@ function matchTheCard(card1, card2) {
 
 
         })
+        score = score + 1
 
         if (count == 8) {
+            scorevalue.value = score
             setTimeout(() => {
 
 
@@ -85,7 +89,7 @@ function matchTheCard(card1, card2) {
             // button.classList.add('startview')
             count = 0;
         }
-
+        
 
 
     } else {
@@ -111,7 +115,7 @@ function matchTheCard(card1, card2) {
 
             })
         }, 1000)
-
+        score = score + 1;
     }
     // cards.forEach((card) => {
     //     let a = card.querySelector('.flip')
@@ -139,7 +143,9 @@ function matchTheCard(card1, card2) {
 
 
 function cardShffel() {
-    button.classList.add('startview')
+    
+    console.log(scorevalue.value)
+    
     cards.forEach((card) => {
         card.style.pointerEvents = "auto"
     })
@@ -152,7 +158,8 @@ function cardShffel() {
     cards.forEach((card, index) => {
         card.querySelector("img").src = `http://127.0.0.1:5500/New%20folder/img-1%20(${array[index]}).png`
     })
-    console.log(cards)
+    button.classList.add('startview')
+    
     value = null;
 }
 
@@ -163,7 +170,7 @@ function cardShffel() {
 
 
 
-cardShffel()
+// cardShffel()
 
 
 
